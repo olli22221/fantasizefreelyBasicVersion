@@ -5348,115 +5348,7 @@ const testScoring = () => {
                     
                     
                    
-                <div style={{marginBottom:"18px","marginTop":"60px", "marginLeft":"150px" }}>
-                    <Button disabled={inspirationFlag} style={{marginRight:"20px","fontWeight": "bold","borderRadius":"5px","color":"white","height":"50px","backgroundColor":"#403c3b","border":"#403c3b 2px solid"}} variant="contained" endIcon={<LightbulbCircleSharpIcon />}  size="large"  onClick={getSuggestions}>Get Inspiration</Button>
-                    <FormControl>
-      <FormLabel id="demo-controlled-radio-buttons-group">Choose a Creativity degree for the AI</FormLabel>
-      <RadioGroup
-      row
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
-        value={temperatureValue}
-        onChange={handleTemperatureChange}
-      ><ReactTooltip type="info" multiline={true} />
-      <FormControlLabel  data-tip="This option makes the inspiration less creative" value={0.8} control={<Radio  />} label="less creative" />
-        <FormControlLabel data-tip="This option is the default value" value={1.0} control={<Radio />} label="default" />
-        <FormControlLabel data-tip="This option makes the inspiration more creative" value={1.2} control={<Radio />} label="more creative" />
-        </RadioGroup>
-    </FormControl>
-                    </div>
-                    
-                    <FormControl>
-      <FormLabel id="demo-controlled-radio-buttons-group">Choose an Inspiration Type</FormLabel>
-      <RadioGroup
-      row
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
-        value={value}
-        onChange={handleChange}
-      ><ReactTooltip type="info" multiline={true} />
-      <FormControlLabel data-tip="This option displays Symbols from Eugene Narmour Implication Realization Model<br>
-        It describes melodic intervalic motion and registral direction. Your task is to decode these symbols into a melody. In the following each symbol is described. If you want to look at some examples please open the tutorial and look it up.<br>
-       <br> P (process): similar intervallic motion (small to small; large to large); same
-        registral direction
-        <br> IP (intervallic process): similar intervallic motion (small to small; large to
-            large); different registral directions
-        <br>VP (registral process): differentiated intervallic motion (small to relatively
-            large); same registral direction
-            <br>D (duplication): same intervallic motion; lateral registral direction
-            <br>ID (intervallic duplication): same intervallic motion (small to small; large to
-                large); different registral directions
-            <br>R (reversal): differentiated intervallic motion (large to relatively small);
-            different registral directions
-            <br>IR (intervallic reversal): differentiated intervallic motion (large to relatively
-                small); same registral direction
-            <br>VR (registral reversal): differentiated intervallic motion (small to relatively
-                large); different registral directions" disabled={narmourFlag} value="showEugeneStructures" control={<Radio />} label="EugeneStructures" />
-        <FormControlLabel  data-tip="This option plays the whole inspiration" value="playSuggestion" control={<Radio  />} label="playSuggestion" />
-        <FormControlLabel data-tip="This option provides the durations of the suggested notes" value="showDurations" control={<Radio />} label="Durations" />
-        <FormControlLabel data-tip="This option provides the pitch heights of the suggested notes" value="showPitches" control={<Radio />} label="Pitches" />
-        <FormControlLabel data-tip="This option provides pitch height as colors.<br> Choose a reference note for the first color and then from there look at the upcoming colors <br> and decide which notes come next depending on the brightness difference" value="showColors" control={<Radio />} label="Colors" />
-        <FormControlLabel data-tip="This option provides the whole suggestion <br> with pitch heights and duration of the notes" value="showWholeMeasure" control={<Radio />} label="WholeMeasure" />
-        
-      </RadioGroup>
-    </FormControl>
-                    <div>
-                    { inspirationFlag
-                    ?<div style={{marginTop:"80px", marginRight:"100px" }}> <div style={{fontWeight: "bold",fontSize:"22px",marginBottom:"30px", textAlign:"center", backgroundColor:"#399ddb"}}>Waiting for the AI to compute the next Notes</div> 
-                    <div style={{marginLeft:"250px"}}><ReactLoading type={"spin"} color={"ffffff"} height={'25%'} width={'25%'} /></div></div>
-
-                   : <div style={{border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90"}}  className='EmptyInspiration'>
-                        {(() => {
-                            switch (value) {
-                                case "playSuggestion":
-                                    
-                                    return <Button style={{"marginLeft":"55px","fontWeight": "bold","borderRadius":"5px","color":"white","height":"50px","backgroundColor":"#403c3b","border":"#403c3b 2px solid"}} variant="contained" endIcon={<MusicNoteIcon />}  size="large"  onClick = {playSuggestion}>PlaySuggestion</Button>
-                                case "showDurations":
-                                    
-                                    return <div>
-                                        <ShowImages images={showDurations} /></div>
-                                case "showPitches":
-                                    
-                                    return <div>{showPitches.map( (note,idx) => {
-              
-                                        return(
-                                            <div style={{textAlign:"center",fontSize:"50px",height:"80px",width:"65px",border:"2px solid gray",margin:"10px",float:"left"}}>{noteCharDict[note.charAt(0)]+ accentDict[showPitchesAccents[idx]]}</div>
-                                        )})}</div>
-                                case "showColors":
-                                    
-                                    return <div >{showColors.map( (note,idx) => {
-              
-                                        return(
-                                            <div style={{float:"left"}}>
-                                              {  note=='R' 
-                                              ?<div style={{textAlign:"center",fontSize:"50px",height:"60px",width:"50px",border:"1px solid gray",margin:"10px",float:"left"}}>R</div>
-                                            :<div style={{textAlign:"center",height:"60px",width:"50px",backgroundColor:"green", filter:"brightness("+note+")",margin:"10px",float:"left"}}></div>
-                                              }
-                                            </div>
-                                        )})}</div>
-                                    
-                                    
-                                case "showWholeMeasure":
-                                   
-                                    return <div>{ showWholeMeasure.length>0 &&
-                                        <ScoreBox notes={showWholeMeasure} timeSign="4/4" violin={false}/>
-                                        }</div>
-                                case "showEugeneStructures":
-                                   
-                                    return <div >{showEugeneStructures.map((struct,idx)=> {
-                                        return(
-                                            <div  style={{textAlign:"center",float:"left", fontSize:"50px",height:"80px",width:"65px", margin:"10px"}} >{struct} </div>
-                                        )
-                                    })}</div>
-                                default:
-                                    return <div></div>
-                            }
-                        })()}
-                    
-                    </div>
-}
-                    </div>
-                        <div style={{marginLeft:"180px",marginTop:"45px",marginBottom:"55px"}}>
+                        <div style={{marginLeft:"180px",marginTop:"245px",marginBottom:"55px"}}>
                     <div style={{float:"left"}}>
                         
                     <SubmitComposition composition={[measure1,measure2,measure3,measure4,measure5,
@@ -5466,16 +5358,16 @@ const testScoring = () => {
                 
                 
                 </div>
-                <div style={{display:"flex",border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90" ,maxWidth:"700px", maxHeight:"250px", marginTop:"130px",alignItems:"center",display:"flex",justifyContent:"center"}}>
-                <div style={{float:"left"}}>
-                    <div style={{display:"flex",borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
+                <div style={{border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90" ,width:"700px", height:"250px", marginTop:"430px", marginLeft:"100px",alignItems:"center",justifyContent:"center"}}>
+                <div style={{float:"left", marginLeft:"60px"}}>
+                    <div style={{borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
                     Flexability Score
                     </div>
             <Progress  type="circle" percent={Math.floor((flexabilityScore/flexMax)*100)}  />
 
             </div>
             <div style={{float:"left", marginLeft:"60px"}}>
-                    <div style={{display:"flex",borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
+                    <div style={{borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
                     Fluency Score
                     </div>
             <Progress  type="circle" percent={Math.floor((fluencyScore/fluencyMax)*100)}  />
