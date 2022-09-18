@@ -62,7 +62,7 @@ function Tutorial() {
         <div className="taskdscr" >
           <h1 style={{textAlign:"center",marginBottom:"50px"}}>At the very Beginning of the Composition</h1>
         <img
-                    width={1400}
+                    width={1000}
                     height={600}
                     src= {Beginning}
                 />
