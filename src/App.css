@@ -102,14 +102,14 @@
 }
 
 .topColumnRight{
-  width: 830px;
+  width: 300px;
   height: 800px;
-  display:"flex";
-  float: right;
+  
+ 
 }
 .topColumnLeft{
-  width: 990px;
-  display:"flex";
+  width: 900px;
+  margin-left: 370px;
   float: left;
 }
 
@@ -138,7 +138,7 @@
   margin: 10px;
 }
 
-.column1{
+.column3{
   float: left;
 
   background-color: #cfcfcf;
@@ -160,6 +160,9 @@
 .column2{
   float: right;
 }
+.column1{
+  width: 990px;
+}
 .column4{
   float: left;
  
@@ -168,7 +171,7 @@
   
   margin-top: 5px;
   margin-left: 120px;
-  width: 655px;
+  width: 355px;
 }
 
 .flex-container {

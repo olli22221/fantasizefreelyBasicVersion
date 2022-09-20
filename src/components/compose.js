@@ -4498,7 +4498,7 @@ const testScoring = () => {
     
 
     return(
-        <div style={{display:"flex"}}>
+        <div style={{display:"flex", float:"left",marginLeft:"100px",marginTop:"30px", border:"2px solid white", backgroundColor:"#E2C59C"}}>
 
             <div className='topColumnLeft' onMouseEnter={()=>{setHover(true)}} onMouseLeave={()=>{setHover(false)}}>
         <div className='div-toptop' >
@@ -5318,8 +5318,35 @@ const testScoring = () => {
                     </div>
                     
                     </div>
-                    <div  >
-                    <div style={{border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90"}} className='column3'>
+                    
+    
+            </div>
+            <div style={{marginLeft:"380px",marginTop:"350px"}}>
+                    <div style={{float:"left"}}>
+                        
+                    <SubmitComposition composition={[measure1,measure2,measure3,measure4,measure5,
+                        measure6,measure7,measure8,measure9,measure10,measure11,measure12,measure13,
+                        measure14,measure15,measure16]} meter={selectedOption['value']} />
+                </div>
+                
+                
+                </div>
+            </div>
+
+            
+            
+            
+                
+            </div>
+
+            <div className='topColumnRight'>
+                    
+                    
+            <div >
+
+           
+
+                    <div style={{marginTop:"360px",width:"130px",border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90"}} className='column3'>
                     <Button disabled= {inspirationFlag}  style={{"margin":"3px","font-weight": "bold","borderRadius":"5px","color":"white","height":"40px","width":"125px","backgroundColor":"#403c3b","border":"#403c3b 2px solid"}} onClick={() => {changeDuration("whole")}}> Whole Notes </Button>
                     <Button disabled= {inspirationFlag} style={{"margin":"3px","font-weight": "bold","borderRadius":"5px","color":"white","height":"40px","width":"125px","backgroundColor":"#403c3b","border":"#403c3b 2px solid"}} onClick={() => {changeDuration("half")}} > Half Notes </Button>
                     <Button disabled= {inspirationFlag} style={{"margin":"3px","font-weight": "bold","borderRadius":"5px","color":"white","height":"40px","width":"125px","backgroundColor":"#403c3b","border":"#403c3b 2px solid"}} onClick={() => {changeDuration("quarter")}}> Quarter Notes </Button>
@@ -5335,59 +5362,12 @@ const testScoring = () => {
                     
 
                     </div>
-                    </div>
-                    
                    
+                    
+                    </div>
                 
     </div>
-    
-            </div>
-            </div>
-
-            <div className='topColumnRight'>
-                    
-                    
-                   
-                        <div style={{marginLeft:"180px",marginTop:"245px",marginBottom:"55px"}}>
-                    <div style={{float:"left"}}>
-                        
-                    <SubmitComposition composition={[measure1,measure2,measure3,measure4,measure5,
-                        measure6,measure7,measure8,measure9,measure10,measure11,measure12,measure13,
-                        measure14,measure15,measure16]} meter={selectedOption['value']} />
-                </div>
-                
-                
-                </div>
-                <div style={{border:"solid 4px silver",borderRadius:"20px",backgroundColor:"#debd90" ,width:"700px", height:"250px", marginTop:"430px", marginLeft:"100px",alignItems:"center",justifyContent:"center"}}>
-                <div style={{float:"left", marginLeft:"60px"}}>
-                    <div style={{borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
-                    Flexability Score
-                    </div>
-            <Progress  type="circle" percent={Math.floor((flexabilityScore/flexMax)*100)}  />
-
-            </div>
-            <div style={{float:"left", marginLeft:"60px"}}>
-                    <div style={{borderRadius:"8px",textAlign: "center",maxHeight:"30px",maxWidth:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
-                    Fluency Score
-                    </div>
-            <Progress  type="circle" percent={Math.floor((fluencyScore/fluencyMax)*100)}  />
-
-            </div>
-            <div style={{float:"left",marginLeft:"60px"}}>
-                    <div style={{borderRadius:"8px",textAlign: "center",height:"30px",width:"130px","fontWeight": "bold",backgroundColor:"#399ddb" ,marginBottom:"30px"}}>
-                    Originality Score
-                    </div>
-            <Progress  type="circle" percent={Math.floor((originalityScore/origMax)*100)}  />
-
-            </div>
-           
-            </div>
-            
-            
-                
-            </div>
-
-            
+               
       
             </div>
 

@@ -11,15 +11,8 @@ import Typewriter from 'typewriter-effect';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useAlert } from 'react-alert'
+import { Button, Stack } from '@mui/material';
 
-
-const Button = styled.button`
-    background-color: blue;
-    font-size: 30px;
-    padding: 100px 60px;
-    color: white;
-    background-color:rgb(190, 165, 132);
-`
 
 
 function Main() {
@@ -89,13 +82,27 @@ function Main() {
 
     return (
         <div>
-        <div style={{fontSize: "50px",textAlign:"center",fontFamily:"Cursive",height:"80px",width:"550px",marginLeft:"500px",marginTop:"30px", backgroundColor:"#403c3b","color":"white" }}>
+        <div style={{fontSize: "50px",textAlign:"center",fontFamily:"Cursive",height:"80px",width:"550px",marginLeft:"680px",marginTop:"30px","color":"#2e63b8" }}>
         Fantasize Freely
     </div>
-    <div style={{alignItems:"center",display:"flex",justifyContent:"center"}} >
+    <div style={{alignItems:"center"}} >
         
        
-        <div>
+        
+       
+        <div style={{height:"900px"}}>
+        
+            
+        
+            <div style={{textAlign:"center",fontFamily:"Cursive",borderRadius:"30px",fontSize: "25px",height:"360px",width:"900px",marginLeft:"500px",marginTop:"100px", backgroundColor:"whitesmoke","color":"black"}}>
+        <Typewriter options={{delay: 5}}
+        onInit={(typewriter) => {
+            typewriter.typeString("Welcome fellow Musician! On this platform you can test your creativity in melody composition. The main task is to compose 3-5 short melodies with a length of 8 to 16 measures. During composing you have the opportunity to listen to your melody but also you can play it on an acoustic instrument. On the bottom right 3 different creativity score are shown. They are updated in realtime while composing. When the time has come and you think your melody is ready for a submission just click on the submitComposition Button. I wish you a lot of fun.").start();
+        } }  
+        />
+            </div >
+
+            <div style={{marginLeft:"750px"}}>
         <Box
       component="form"
       sx={{
@@ -109,25 +116,13 @@ function Main() {
         label="Please type your initials here"
         value={name}
         onChange={handleChange}
-        style={{border: '3px solid #403c3b',backgroundColor:'white'}}
+        style={{border: '3px solid #403c3b',backgroundColor:'white',marginTop:"50px"}}
       />
       
     </Box>
     </div>
-       
-        <div style={{height:"900px"}}>
-        
             
-        
-            <div style={{textAlign:"center",fontFamily:"Cursive",borderRadius:"30px",fontSize: "25px",height:"360px",width:"700px",marginLeft:"100px",marginTop:"50px", backgroundColor:"#403c3b","color":"white"}}>
-        <Typewriter options={{delay: 30}}
-        onInit={(typewriter) => {
-            typewriter.typeString("Welcome fellow Musician! On this platform you can test your creativity in melody composition. The main task is to compose 3-5 short melodies with a length of 8 to 16 measures. During composing you have the opportunity to listen to your melody but also you can play it on an acoustic instrument. On the bottom right 3 different creativity score are shown. They are updated in realtime while composing. When the time has come and you think your melody is ready for a submission just click on the submitComposition Button. I wish you a lot of fun.").start();
-        } }  
-        />
-            </div >
-            
-            <Button style={{height:"150px",padding:"0px",backgroundColor:"#403c3b",marginTop:"70px",marginLeft:"150px","borderRadius":"5px","font-weight": "bold","height":"50px","width":"265px","border":"gold 2px solid"}} onClick={navToComposePanel}>Start Composing</Button>
+            <Button style={{color:"white",height:"150px",padding:"0px",backgroundColor:"#2e63b8",marginTop:"40px",marginLeft:"800px","borderRadius":"5px","font-weight": "bold","height":"50px","width":"265px","border":"#2e63b8 2px solid"}} onClick={navToComposePanel}>Lets Begin</Button>
 
         </div>
     </div>
