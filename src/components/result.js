@@ -58,19 +58,8 @@ function Result() {
 
     useEffect(() => {
 
-        console.log(totalResult)
-        if (totalResult < 200) {
-            setCreativityCategory(0)
-            
-        }
-        else if(totalResult >= 200 && totalResult < 350) {
-            setCreativityCategory(1)
-        }
-        else if(totalResult >= 350) {
-            setCreativityCategory(2)
-        }
+        
         setImage("data:image/jpeg;charset=utf-8;base64,"+musicatResult)
-        console.log(creativityCategory)
 
 
     },[musicatResult])

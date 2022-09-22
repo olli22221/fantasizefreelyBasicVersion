@@ -102,13 +102,14 @@
 }
 
 .topColumnRight{
-  width: 300px;
+  width: 400px;
   height: 800px;
+ 
   
  
 }
 .topColumnLeft{
-  width: 900px;
+  width: 970px;
   margin-left: 370px;
   float: left;
 }
@@ -139,7 +140,7 @@
 }
 
 .column3{
-  float: left;
+ 
 
   background-color: #cfcfcf;
 }

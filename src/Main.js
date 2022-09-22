@@ -97,7 +97,7 @@ function Main() {
             <div style={{textAlign:"center",fontFamily:"Cursive",borderRadius:"30px",fontSize: "25px",height:"360px",width:"900px",marginLeft:"500px",marginTop:"100px", backgroundColor:"whitesmoke","color":"black"}}>
         <Typewriter options={{delay: 5}}
         onInit={(typewriter) => {
-            typewriter.typeString("Welcome fellow Musician! On this platform you can test your creativity in melody composition. The main task is to compose 3-5 short melodies with a length of 8 to 16 measures. During composing you have the opportunity to listen to your melody but also you can play it on an acoustic instrument. On the bottom right 3 different creativity score are shown. They are updated in realtime while composing. When the time has come and you think your melody is ready for a submission just click on the submitComposition Button. I wish you a lot of fun.").start();
+            typewriter.typeString("Welcome fellow Musician! On this platform you can test your creativity in melody composition. The main task is to compose 3-5 short melodies with a length of 8 to 16 measures. During composing you have the opportunity to listen to your melody but also you can play it on an acoustic instrument. When the time has come and you think your melody is ready for a submission just click on the submitComposition Button.At the end you will be face with a feedback page showing your creativity performance and musicats listening result. I wish you a lot of fun.").start();
         } }  
         />
             </div >
@@ -106,14 +106,14 @@ function Main() {
         <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 2, width: '40ch' },
+        '& > :not(style)': { m: 2, width: '45ch' },
       }}
       noValidate
       autoComplete="off"
     >
       <TextField
         id="outlined-name"
-        label="Please type your initials here"
+        label="Please type your initials from the Survey here"
         value={name}
         onChange={handleChange}
         style={{border: '3px solid #403c3b',backgroundColor:'white',marginTop:"50px"}}

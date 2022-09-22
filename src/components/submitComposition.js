@@ -27,6 +27,9 @@ const inspirationFlag = useRecoilValue(inspirationFlagAtom);
 let id = useRecoilValue(subjectIdAtom);
 const [groups, setGroups] = useRecoilState(groupsAtom);
 const [analogies, setAnalogies] = useRecoilState(analogiesAtom);
+const [flexabilityScore, setFlexabilityScore] = useRecoilState(flexabilityScoreAtom);
+const [fluencyScore, setFluencyScore] = useRecoilState(fluencyScoreAtom);
+const [originalityScore, setOriginalityScore] = useRecoilState(originalityScoreAtom);
 const [counter, setCounter] = useRecoilState(counterAtom);
 const [submissions, setSubmissions] = useRecoilState(submissionsAtom);
 const [musicatResponse, setmusicatResponse] = useRecoilState(musicatResponseAtom);
@@ -142,10 +145,12 @@ const prepareComposition = (composition_) => {
             
         }
     }).then((response) => {
-        console.log(response)
+        
         
         setmusicatResponse(response.data['musicatPNG'])
-        setTotalResult(response.data['totalScore'])
+        setFluencyScore(response.data['fluency'])
+        setFlexabilityScore(response.data['flex'])
+        setOriginalityScore(response.data['orig'])
         const submissionCount = submissions + 1
         setSubmissions(submissionCount)
         
