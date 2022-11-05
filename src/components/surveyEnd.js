@@ -394,7 +394,7 @@ function SurveyEndPage() {
                 "Content-Type": "application/json"
             }
            }).then((response) => {
-                //setJwtToken([])
+                setJwtToken([])
                 setAllowed(true)
                 setAllowed2(false)
                 nav("/SurveyToken")

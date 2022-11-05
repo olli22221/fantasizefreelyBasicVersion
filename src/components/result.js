@@ -47,7 +47,6 @@ function Result() {
     }
 
     const endTask = () => {
-        setJwtToken([])
         setSubmissions(0)
         setFlexabilityScore(0)
         setFluencyScore(0)
