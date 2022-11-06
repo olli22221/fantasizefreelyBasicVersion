@@ -33,7 +33,11 @@ function SurveyToken() {
         <div>
             
             <Popup open={open} closeOnDocumentClick onClose={closeModal}>   
-                 <div className="modal">     <Button>Teeeesssssttt</Button>     <a className="close" onClick={closeModal}>  
+                 <div className="modal">      <p>The following code gives you credits that can be used to get free research participants at SurveySwap.io. 
+ 
+ Go to: <a href="https://surveyswap.io/sr/UNZ4-6OHV-8S7J">https://surveyswap.io/sr/UNZ4-6OHV-8S7J </a>
+  
+ Or, alternatively, enter the code manually: UNZ4-6OHV-8S7J</p>      <a className="close" onClick={closeModal}>  
                       &times;          </a>          
                         </div>  
             </Popup>
