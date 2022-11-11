@@ -33,7 +33,7 @@ function SurveyToken() {
         <div>
             
             <Popup  open={open} closeOnDocumentClick onClose={closeModal}>   
-                 <div style={{height:"800px"}} className="modal">     <p style={{fontSize:"25px", textAlign:"center",verticalAlign:"center"}}>Enter the following  Completion Code on Prolific: <br/> <br/> <br/>     <p style={{fontSize:"40px",fontWeight:"bold"}}>CE5H5066</p> </p>     <a className="close" onClick={closeModal}>  
+                 <div style={{height:"800px"}} className="modal">     <p style={{fontSize:"25px", textAlign:"center",verticalAlign:"center"}}>Enter the following  Completion Code on Prolific: <br/> <br/> <br/>     <p style={{fontSize:"40px",fontWeight:"bold"}}>CF03T8AY</p> </p>     <a className="close" onClick={closeModal}>  
                       &times;          </a>          
                         </div>  
             </Popup>

@@ -143,11 +143,11 @@ function SurveyPage() {
     return( 
     <div>
         <div style={{textAlign:"center",marginBottom:"25px",font: "30px bolder"}}>Survey of FantasizeFreely</div>
-        <div style={{marginLeft:"650px",textAlign:"center",height:"240px",width:"600px",font: "20px bolder"}}> As part of a scientific bachelor thesis, we are testing a tool which detects creativity in students. The survey process will be as follows. Firstly we request you to fill in your demographic information on this survey. Then a link to the creativity tool and a video tutorial  is provided to you. You will be requested to submit 1 to 5 short melodies. When you have done that you provide us with your honest opinion on this creativity tool.
+        <div style={{marginLeft:"650px",textAlign:"center",height:"240px",width:"600px",font: "20px bolder"}}> As part of a scientific bachelor thesis, we are testing a tool which detects creativity in students. The survey process will be as follows. Firstly we request you to fill in your demographic information on this survey and suggestyou to watch the video Tutorial below. Then after pressing the Complete Button will get you to the creativity tool . You will be requested to submit 1 to 5 short melodies. When you have done that you provide us with your honest opinion on this creativity tool.
 
 
 
-P.S.: This survey contains credits to get free survey responses at SurveySwap.io </div>
+ </div>
         <Survey model={survey} />;
 
         </div>
