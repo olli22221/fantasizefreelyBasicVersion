@@ -10,7 +10,7 @@ function SurveyToken() {
 
     let nav = useNavigate();
     const [open, setOpen] = useState(true);  
-    const closeModal = () => setOpen(false);
+    const closeModal = () => setOpen(true);
 
     const [allowed, setAllowed] = useRecoilState(allowedAtom);
 
@@ -32,12 +32,8 @@ function SurveyToken() {
 
         <div>
             
-            <Popup open={open} closeOnDocumentClick onClose={closeModal}>   
-                 <div className="modal">      <p>The following code gives you credits that can be used to get free research participants at SurveySwap.io. 
- 
- Go to: <a href="https://surveyswap.io/sr/UNZ4-6OHV-8S7J">https://surveyswap.io/sr/UNZ4-6OHV-8S7J </a>
-  
- Or, alternatively, enter the code manually: UNZ4-6OHV-8S7J</p>      <a className="close" onClick={closeModal}>  
+            <Popup  open={open} closeOnDocumentClick onClose={closeModal}>   
+                 <div style={{height:"800px"}} className="modal">     <p style={{fontSize:"25px", textAlign:"center",verticalAlign:"center"}}>Enter the following  Completion Code on Prolific: <br/> <br/> <br/>     <p style={{fontSize:"40px",fontWeight:"bold"}}>CE5H5066</p> </p>     <a className="close" onClick={closeModal}>  
                       &times;          </a>          
                         </div>  
             </Popup>
